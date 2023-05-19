@@ -1,2 +1,18 @@
+# server
 server/node_modules
 server/.env
+
+# mobile
+mobile/node_modules
+mobile/.expo/
+mobile/dist/
+mobile/npm-debug.*
+mobile/*.jks
+mobile/*.p8
+mobile/*.p12
+mobile/*.key
+mobile/*.mobileprovision
+mobile/*.orig.*
+mobile/web-build/
+mobile/.DS_Store
+mobile/.metro-health-check*
