@@ -1,25 +1,10 @@
-import { StatusBar } from 'expo-status-bar'
-import { ImageBackground, View, Text, TouchableOpacity } from 'react-native'
+import { View, Text, TouchableOpacity } from 'react-native'
 import { makeRedirectUri, useAuthRequest } from 'expo-auth-session'
-import { styled } from 'nativewind'
 import { useEffect } from 'react'
 import { useRouter } from 'expo-router'
 import * as SecureStore from 'expo-secure-store'
-
-import {
-  useFonts,
-  Roboto_400Regular,
-  Roboto_700Bold,
-} from '@expo-google-fonts/roboto'
-
-import { BaiJamjuree_700Bold } from '@expo-google-fonts/bai-jamjuree'
-
-import blurBg from '../src/assets/bg-blur.png'
-import Stripes from '../src/assets/stripes.svg'
 import NlwSpacetimeLogo from '../src/assets/nlw-spacetime-logo.svg'
 import { api } from '../src/lib/api'
-
-const StyledStripes = styled(Stripes)
 
 export default function App() {
   const router = useRouter()
@@ -29,12 +14,6 @@ export default function App() {
     revocationEndpoint:
       'https://github.com/settings/connections/applications/d2a8ab90c468f104dcab',
   }
-
-  const [hasLoadedFonts] = useFonts({
-    Roboto_400Regular,
-    Roboto_700Bold,
-    BaiJamjuree_700Bold,
-  })
 
   const [, response, signWithGithub] = useAuthRequest(
     {
@@ -74,16 +53,8 @@ export default function App() {
     }
   }, [response])
 
-  if (!hasLoadedFonts) return null
-
   return (
-    <ImageBackground
-      source={blurBg}
-      className="relative flex-1 items-center justify-center bg-gray-900 px-10 py-10"
-      imageStyle={{ position: 'absolute', left: '-100%' }}
-    >
-      <StyledStripes className="absolute left-2" />
-
+    <View className="flex-1 items-center justify-center px-10 py-10">
       <View className="flex-1 items-center justify-center gap-6">
         <NlwSpacetimeLogo />
         <View className="space-y-2">
@@ -110,7 +81,6 @@ export default function App() {
       <Text className="text-small text-center font-body leading-relaxed text-gray-200">
         Feito com 💜 no NLW da Rocketseat
       </Text>
-      <StatusBar style="light" />
-    </ImageBackground>
+    </View>
   )
 }
