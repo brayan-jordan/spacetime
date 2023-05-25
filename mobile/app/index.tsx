@@ -12,12 +12,12 @@ export default function App() {
     authorizationEndpoint: 'https://github.com/login/oauth/authorize',
     tokenEndpoint: 'https://github.com/login/oauth/access_token',
     revocationEndpoint:
-      'https://github.com/settings/connections/applications/d2a8ab90c468f104dcab',
+      'https://github.com/settings/connections/applications/<github_client_id>',
   }
 
   const [, response, signWithGithub] = useAuthRequest(
     {
-      clientId: 'd2a8ab90c468f104dcab',
+      clientId: '<github_client_id>',
       scopes: ['identity'],
       redirectUri: makeRedirectUri({
         scheme: 'Spacetime',
