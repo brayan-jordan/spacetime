@@ -61,7 +61,7 @@ export default function Memories() {
             <Icon name="log-out" size={16} color="#000" />
           </TouchableOpacity>
 
-          <Link href="/new " asChild>
+          <Link href="/new" asChild>
             <TouchableOpacity className="h-10 w-10 items-center justify-center rounded-full bg-green-500">
               <Icon name="plus" size={16} color="#000" />
             </TouchableOpacity>
