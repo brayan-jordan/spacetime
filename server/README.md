@@ -24,4 +24,6 @@ $ npx prisma migrate deploy
 # development
 $ npm run dev
 ```
+## Github OAuth
+Como visto acima, é necessário criar um [Github OAuth](https://docs.github.com/pt/apps/oauth-apps/building-oauth-apps/authorizing-oauth-apps), é importante que ao criar a opção ***Authorization Callback URL*** seja configurada com o seguinte texto exp://<SEU_IP_NA_REDE>:19000
 
