@@ -1,5 +1,10 @@
-desafios:
-
-tela de detalhes da memoria / edição
-compartilhar link de memórias públicas
-selecionar data da memória ao invés de manter o datime de criação
+# Spacetime
+Criei um aplicativo que permite armazenar lembranças de momentos da sua vida, e depois visualizar em formato de linha do tempo. Para isso estruturei um:
+- [Back-end](https://github.com/brayan-jordan/spacetime/tree/master/server): Desenvolvido em [NodeJS](https://nodejs.org/en), contém rota para autenticação (usando [Github OAuth](https://docs.github.com/pt/apps/oauth-apps/building-oauth-apps/authorizing-oauth-apps)), rota para armazenar arquivos e disponibilizar estaticamente (os arquivos são armazenados em disco), rotas para criar,listar,editar e excluir lembranças. Todas as rotas possuem implementação de segurança (JWT), impedindo que usuários acessem sem estar autenticados, além disso essa autenticação também impede o acesso a conteúdos que não são da autoria do usuário logado.
+- [Mobile App](https://github.com/brayan-jordan/spacetime/tree/master/mobile): Desenvovido usando o framework [Expo](https://expo.dev/), que é baseado em ReactNative, esse framework permite testar aplicações de forma rápida, conseguindo testar usando o seu próprio smartphone através do app [ExpoGo](https://expo.dev/client). Para o desenvolvimento desse aplicativo também foram usadas ferramentas como: [Tailwind CSS](https://tailwindcss.com/) para facilitar a aplicação de estilização, [Axios](https://axios-http.com/ptbr/docs/intro) para facilitar a comunicação com o back-end, além de muitas outras bibliotecas internas do Expo para facilitar o desenvolvimento do app.
+## Imagens do projeto
+| ![Imagem 1](https://github.com/brayan-jordan/spacetime/blob/master/imgs/login_page.PNG) | ![Imagem 2](https://github.com/brayan-jordan/spacetime/blob/master/imgs/add_memory.PNG) |
+|:---:|:---:|
+| Tela inicial da aplicação | Formulário para cadastro de uma nova lembrança |
+| ![Imagem 3](https://github.com/brayan-jordan/spacetime/blob/master/imgs/add_memory2.PNG) | ![Imagem 4](https://github.com/brayan-jordan/spacetime/blob/master/imgs/list_memories.PNG) |
+| Formulário preenchido para cadastro de uma nova lembrança | Tela que exibe as lembranças em formato de linha do tempo |
